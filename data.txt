@@ -1,0 +1,157 @@
+Loket 9 :
+- [x] Switch Cisco Main + backup
+- [ ] DB FO =
+- [x] Rack & SW.Loket & cctv
+- [x] Kabel Uplink SW.Loket & cctv
+- [x] kabel PC loket & TO
+- [x] Cctv loket 5 unit
+- [ ] Box panel & SW.Gate
+- [ ] Uplink SW.Gate
+- [ ] Kabel Gate,cctv & access point
+- [ ] Cctv gate 2 unit
+- [ ] Access point 1 unit
+
+
+Loket I :
+- [x] Switch Cisco Main + backup
+- [ ] DB FO =
+- [x] Rack & SW.Loket & cctv
+- [x] Kabel Uplink SW.Loket & cctv
+- [x] Kabel PC Loket
+- [x] Cctv + kabel 3 unit
+- [ ] Box panel & SW.Gate & cctv
+- [ ] Uplink SW.Gate & cctv
+- [ ] Kabel Gate (7 line)
+- [ ] Cctv Gate & kabel 2 unit
+- [ ] Cctv Loading 2 unit
+- [ ] Cctv gate 2 unit
+- [ ] Cctv loading 2 unit
+- [ ] Access point 1 unit
+
+
+Loket D :
+- [x] Switch Cisco Main + backup
+- [ ] DB FO = 
+- [x] Kabel Patchode loket 6 line
+- [x] cctv loket dalam 2 unit (permanent)
+- [ ] Cctv loket luar 1 unit
+- [x] Kabel gate 5 line
+- [ ] Cctv Gate & kabel 2 unit
+- [ ] Access Point & kabel 1 unit
+
+
+Loket G :
+- [x] Switch Cisco Main + backup
+- [ ] DB FO =
+- [x] Cctv loket 3 unit (permanent)
+- [ ] Cctv loket luar 1 unit
+- [ ] SW.Gate 1 unit
+- [ ] Kabel gate 4 line
+- [ ] Kabel loading 1 line
+- [ ] Kabel TO 1 line
+- [ ] Cctv & kabel gate 1 unit
+- [ ] Access point & kabel 1 unit
+- [ ] Cctv pintu artis 1 unit
+- [ ] Finger Pintu artis (1 line)
+
+
+Loket F :
+- [x] Switch Cisco Main + backup
+- [ ] DB FO =
+- [x] Cctv Loket F1 2 unit (permanent)
+- [ ] Cctv Loket Luar F1 1 unit
+- [x] Cctv Loket F1 2 unit (permanent)
+- [ ] Cctv Loket Luar F2 1 unit
+- [x] Kabel Gate 5 line
+- [ ] Cctv gate & kabel 1 unit
+- [ ] Access Point gate & kabel 1 unit
+- [x] Kabel TO
+
+
+Loket 2AB :
+- [x] Switch Cisco Main + backup
+- [ ] DB FO = 
+- [x] Rack & SW.Loket & cctv
+- [x] Kabel Uplink SW.Loket & cctv
+- [x] Kabel PC Loket
+- [x] Cctv & kabel loket 4 unit
+- [x] Kabel Gate 2A (3 line)
+- [x] Cctv & kabel gate 2A 1 unit
+- [ ] Access point & kabel gate 2A 1 unit
+- [ ] Cctv & kabel loading 2A 1 unit
+- [x] Kabel Gate 2B (5 line)
+- [x] Cctv & kabel gate 2B 1 unit
+- [ ] Access point & kabel gate 2B 1 unit
+- [ ] Uplink TO
+
+
+Gate B3 :
+- [ ] Switch Cisco Main + backup
+- [ ] Kabel Uplink
+- [ ] Kabel Gate 5 line
+- [ ] Kabel TO
+- [ ] Cctv & kabel 1 unit
+- [ ] Access point & kabel 1 unit
+
+
+
+Gate 1 konser :
+- [ ] Uplink SW.Gate.1 dari SW.PU.Tribun (1 line)
+- [ ] Box panel & SW.Gate
+- [ ] Kabel Gate (5 line)
+- [ ] Cctv & kabel 1 unit
+- [ ] Access point 1 unit
+
+Gate VIP konser :
+- [ ] Uplink SW.Gate.VIP dari SW.Gate.1 (1 line)
+- [ ] Box panel & SW.Gate
+- [ ] Kabel Gate (5 line)
+- [ ] Cctv & kabel 1 unit
+- [ ] Cctv & kabel Drink Corner VIP 1 unit
+- [ ] Access point 1 unit
+
+Gate 2 konser :
+- [ ] Uplink SW.Gate.2 dari SW.Loket.H (1 line)
+- [ ] Box panel & SW.Gate
+- [ ] Kabel Gate (5 line)
+- [ ] Cctv & kabel 1 unit
+- [ ] Access point 1 unit
+
+PU Tribun :
+- [ ] Uplink SW.PU.Tribun dari SW.Loket.H (1 line)
+- [ ] Cctv & kabel PU 5 unit
+- [ ] Access point & kabel VIP-Tribun 1 unit
+- [ ] Kabel FOH (1 line)
+
+GPN Lt.6 Cctv :
+- [ ] Switch & Uplink 1 unit
+- [ ] Kabel distribusi
+- [ ] Router Wifi
+
+Gambir Storage Loket.com
+- [ ] Router wifi & Uplink 1 unit
+
+
+Support Office Departemen
+
+# Media Center :
+- [ ] Switch & Uplink 1 unit
+- [ ] Kabel distribusi (6 line)
+- [ ] Cctv & kabel 1 unit
+- [x] Wifi internet by Matrix
+
+# Promosi & DGM
+- [ ] Switch & uplink
+- [ ] Kabel distribusi
+
+# Safety
+- [ ] Switch & uplink
+- [ ] Kabel distribusi 
+
+# HRD Jateng
+- [ ] Uplink (permanent)
+
+# Mesin Absen Temporer
+- [x] GPN Lt.1 Barat
+- [x] Gambir Yayasan
+- [x] Pintu C
