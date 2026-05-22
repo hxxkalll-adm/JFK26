@@ -297,8 +297,8 @@ function SortableSection({
   );
 }
 
-export default function HomeClient({ initialCategories }: { initialCategories: Category[] }) {
-  const [categories, setCategories] = useState(initialCategories);
+export default function HomeClient({ initialCategories = [] }: { initialCategories: Category[] }) {
+  const [categories, setCategories] = useState(initialCategories || []);
   const [activeTab, setActiveTab] = useState(initialCategories && initialCategories[0] ? initialCategories[0].id : 0);
   const [isPending, startTransition] = useTransition();
   const [isManageMode, setIsManageMode] = useState(false);
@@ -494,6 +494,20 @@ export default function HomeClient({ initialCategories }: { initialCategories: C
     if (confirm('Hapus tugas ini?')) await deleteTask(taskId);
   };
 
+  const onDeleteCategory = async (catId: number) => {
+    setIsSubmitting(true);
+    const result = await deleteCategory(catId);
+    setIsSubmitting(false);
+    if (result.success) {
+      if (activeTab === catId) {
+        const remaining = categories.filter(c => c.id !== catId);
+        setActiveTab(remaining[0]?.id || 0);
+      }
+    } else {
+      alert(result.error);
+    }
+  };
+
   const startEdit = (type: 'category' | 'task' | 'section', id: number, val: string) => {
     setEditingId({ type, id });
     setEditValue(val);
@@ -509,30 +523,36 @@ export default function HomeClient({ initialCategories }: { initialCategories: C
     if (!editingId || !editValue.trim()) return;
     
     setIsSubmitting(true);
-    let result;
+    let result: { success: boolean; error?: string } = { success: false };
 
-    if (editingId.type === 'section' && editingSectionName) {
-      if (editValue !== editingSectionName) {
-        result = await updateSectionPositions(activeTab, editingSectionName, editValue);
-      } else {
-        setShowEditSectionModal(false);
-        setIsSubmitting(false);
-        return;
+    try {
+      if (editingId.type === 'section' && editingSectionName) {
+        if (editValue !== editingSectionName) {
+          result = await updateSectionPositions(activeTab, editingSectionName, editValue);
+        } else {
+          setShowEditSectionModal(false);
+          setIsSubmitting(false);
+          return;
+        }
+      } else if (editingId.type === 'category') {
+        result = await updateCategory(editingId.id, editValue);
+      } else if (editingId.type === 'task') {
+        result = await updateTask(editingId.id, editValue);
       }
-    } else if (editingId.type === 'category') {
-      result = await updateCategory(editingId.id, editValue);
-    } else if (editingId.type === 'task') {
-      result = await updateTask(editingId.id, editValue);
-    }
-    
-    setIsSubmitting(false);
-    if (result && result.success) {
-      setEditingId(null);
-      setEditingSectionName(null);
-      setShowEditSectionModal(false);
-      setShowEditProjectModal(false);
-    } else {
-      alert('Gagal memperbarui');
+      
+      if (result && result.success) {
+        setEditingId(null);
+        setEditingSectionName(null);
+        setShowEditSectionModal(false);
+        setShowEditProjectModal(false);
+      } else {
+        alert(result?.error || 'Gagal memperbarui');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Terjadi kesalahan sistem');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

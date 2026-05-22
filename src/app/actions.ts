@@ -19,10 +19,16 @@ export async function toggleTask(taskId: number, completed: boolean) {
 
 export async function addTask(categoryId: number, content: string, section: string = "A. Gate") {
   try {
-    // Split content by new lines and filter out empty lines
     const lines = content.split('\n').map(l => l.trim()).filter(l => l !== '');
-    
     if (lines.length === 0) return { success: false, error: 'Isi tugas tidak boleh kosong' };
+
+    // Get the highest position in this section to start from
+    const lastTask = await prisma.task.findFirst({
+      where: { categoryId, section },
+      orderBy: { position: 'desc' },
+    });
+    
+    let currentPos = lastTask ? lastTask.position + 1 : 0;
 
     await prisma.$transaction(
       lines.map(line => prisma.task.create({
@@ -30,6 +36,7 @@ export async function addTask(categoryId: number, content: string, section: stri
           content: line,
           categoryId,
           section,
+          position: currentPos++,
         },
       }))
     );
